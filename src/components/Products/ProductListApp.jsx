@@ -35,7 +35,7 @@ class ProductListApp extends React.Component {
 
     return (
       <div className="columns">
-        <div className="column">
+        <div className="column is-two-thirds">
           <ProductList
             products={products}
             onAddToCartRequest={this.addToCart}
