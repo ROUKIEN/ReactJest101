@@ -4,7 +4,7 @@ import ProductListApp from './components/Products/ProductListApp'
 
 import { products } from '../products.json'
 
-import './styles.css'
+import 'bulma/css/bulma.min.css'
 
 function App() {
   return (

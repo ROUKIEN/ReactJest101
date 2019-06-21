@@ -5,6 +5,7 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "bulma": "0.7.5",
     "enzyme": "3.10.0",
     "enzyme-adapter-react-16": "1.14.0",
     "jest": "24.8.0",
