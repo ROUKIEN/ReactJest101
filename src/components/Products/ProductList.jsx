@@ -1,6 +1,9 @@
 import React from 'react'
 import ProductListItem from './ProductListItem'
 
+/**
+ * Renders a list of products.
+ */
 const ProductList = ({ products, onAddToCartRequest = () => {} }) => (
   <div className="product-list">
     <h5 className="title is-5">Products list:</h5>

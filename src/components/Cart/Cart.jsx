@@ -1,5 +1,10 @@
 import React from 'react'
 
+/**
+ * Renders the user cart content.
+ *
+ * @param {array} products the cart products
+ */
 const Cart = ({ products }) => (
   <div className="cart">
     <h5 className="title is-5">Cart content</h5>

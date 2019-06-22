@@ -2,6 +2,9 @@ import React from 'react'
 import ProductList from './ProductList'
 import Cart from './../Cart/Cart'
 
+/**
+ * Allows the user to add products to its cart among a products list.
+ */
 class ProductListApp extends React.Component {
   constructor(props) {
     super(props)
