@@ -1,5 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
+/**
+ * Allows to add a product to the cart
+ */
 class AddToCart extends React.Component {
   constructor(props) {
     super(props)
@@ -46,6 +50,24 @@ class AddToCart extends React.Component {
       </form>
     )
   }
+}
+
+AddToCart.propTypes = {
+  /**
+   * Called when the form is submitted
+   *
+   * @param {Object} addToCartRequest the add to cart request
+   */
+  onAddToCartRequest: PropTypes.func,
+  /**
+   * The max number of selectable items
+   */
+  stock: PropTypes.number
+}
+
+AddToCart.defaultProps = {
+  onAddToCartRequest: () => {},
+  stock: 0
 }
 
 export default AddToCart

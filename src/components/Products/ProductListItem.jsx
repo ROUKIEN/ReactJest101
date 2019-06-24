@@ -1,7 +1,11 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import AddToCart from '../Cart/AddToCart'
 
-const ProductListItem = ({ product, onAddToCartRequest = () => {} }) => (
+/**
+ * Renders a product list item
+ */
+const ProductListItem = ({ product, onAddToCartRequest }) => (
   <div className="card product-list-item">
     <header className="card-header">
       <p className="card-header-title">
@@ -31,5 +35,22 @@ const ProductListItem = ({ product, onAddToCartRequest = () => {} }) => (
     </div>
   </div>
 )
+
+ProductListItem.propTypes = {
+  /**
+   * The product to display
+   */
+  product: PropTypes.object.isRequired,
+  /**
+   * The callback called when the `AddToCart` component triggers an `onAddToCartRequest` event.
+   *
+   * @param {object} the product ID plus the desired quantity
+   */
+  onAddToCartRequest: PropTypes.func
+}
+
+ProductListItem.defaultProps = {
+  onAddToCartRequest: () => {}
+}
 
 export default ProductListItem

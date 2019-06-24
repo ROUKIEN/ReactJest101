@@ -1,5 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
+/**
+ * Renders the user cart content.
+ */
 const Cart = ({ products }) => (
   <div className="cart">
     <h5 className="title is-5">Cart content</h5>
@@ -25,5 +29,12 @@ const Cart = ({ products }) => (
     </div>
   </div>
 )
+
+Cart.propTypes = {
+  /**
+   * The cart products
+   */
+  products: PropTypes.arrayOf(PropTypes.object)
+}
 
 export default Cart
