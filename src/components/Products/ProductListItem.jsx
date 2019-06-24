@@ -2,6 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import AddToCart from '../Cart/AddToCart'
 
+/**
+ * Renders a product list item
+ */
 const ProductListItem = ({ product, onAddToCartRequest }) => (
   <div className="card product-list-item">
     <header className="card-header">
@@ -34,9 +37,15 @@ const ProductListItem = ({ product, onAddToCartRequest }) => (
 )
 
 ProductListItem.propTypes = {
-  /** The product to render */
+  /**
+   * The product to display
+   */
   product: PropTypes.object.isRequired,
-  /** The function called when the `AddToCart` component triggers an `onAddToCartRequest` event */
+  /**
+   * The callback called when the `AddToCart` component triggers an `onAddToCartRequest` event.
+   *
+   * @param {object} the product ID plus the desired quantity
+   */
   onAddToCartRequest: PropTypes.func
 }
 

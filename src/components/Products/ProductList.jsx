@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import ProductListItem from './ProductListItem'
 
 /**
@@ -20,5 +21,23 @@ const ProductList = ({ products, onAddToCartRequest = () => {} }) => (
     {products.length === 0 && <em>No products available !</em>}
   </div>
 )
+
+ProductList.propTypes = {
+  /**
+   * The available product list
+   */
+  products: PropTypes.arrayOf(PropTypes.object),
+  /**
+   * The callback called when a product is added to the cart
+   *
+   * @param {object} the product with the desired quantity
+   */
+  onAddToCartRequest: PropTypes.func
+}
+
+ProductList.defaultProps = {
+  products: [],
+  onAddToCartRequest: () => {}
+}
 
 export default ProductList

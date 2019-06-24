@@ -1,9 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 /**
  * Renders the user cart content.
- *
- * @param {array} products the cart products
  */
 const Cart = ({ products }) => (
   <div className="cart">
@@ -30,5 +29,12 @@ const Cart = ({ products }) => (
     </div>
   </div>
 )
+
+Cart.propTypes = {
+  /**
+   * The cart products
+   */
+  products: PropTypes.arrayOf(PropTypes.object)
+}
 
 export default Cart
