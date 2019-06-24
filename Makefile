@@ -12,7 +12,9 @@ DOCKER_ARGS := 		-it \
 
 install:
 	$(DOCKER_CMD) $(DOCKER_ARGS) $(DOCKER_NODE_IMG) npm i
-test: install
+dev:
+	$(DOCKER_CMD) $(DOCKER_ARGS) -p 3000:3000 $(DOCKER_NODE_IMG) npm start
+test:
 	$(DOCKER_CMD) $(DOCKER_ARGS) $(DOCKER_NODE_IMG) npx jest
 docs:
 	$(DOCKER_CMD) $(DOCKER_ARGS) -p 6060:6060 $(DOCKER_NODE_IMG) npx styleguidist server

@@ -1,6 +1,7 @@
 import React from 'react'
 import ProductList from './ProductList'
-import Cart from './../Cart/Cart'
+import Cart from '../Cart/Cart'
+import productsApi from '../../api/productsApi'
 
 /**
  * Allows the user to add products to its cart among a products list.
@@ -9,14 +10,23 @@ class ProductListApp extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      cartProducts: []
+      cartProducts: [],
+      products: []
     }
 
     this.addToCart = this.addToCart.bind(this)
   }
 
+  componentDidMount() {
+    productsApi.getProducts()
+      .then(response => {
+        this.setState({ products: response.data })
+      })
+      .catch(err => alert(err.message))
+  }
+
   addToCart({ id, quantity }) {
-    const product = this.props.products.find(product => product.id === id)
+    const product = this.state.products.find(product => product.id === id)
     product.quantity = quantity
     const { cartProducts } = this.state
     const productExistsInCartIndex = cartProducts.findIndex(
@@ -33,8 +43,7 @@ class ProductListApp extends React.Component {
   }
 
   render() {
-    const { products } = this.props
-    const { cartProducts } = this.state
+    const { products, cartProducts } = this.state
 
     return (
       <div className="columns">
